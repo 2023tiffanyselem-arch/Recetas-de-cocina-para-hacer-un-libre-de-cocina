@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat conversacional sobre cocina</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="contenedor-principal">
+    <!-- Contenedor general que respeta la estructura del boceto[span_0](start_span)[span_0](end_span) -->
+    <section id="zona-de-chat" class="zona-de-chat" aria-label="Zona de chat">
+      <header class="encabezado-chat">
+        <h1>Chat conversacional sobre cocina</h1>
+        <p>Asistente para recomendar recetas y armar tu libro de cocina</p>
+      </header>
+
+      <!-- Área de historial de mensajes -->
+      <div id="mensajes-chat" class="mensajes-chat" role="log" aria-live="polite">
+        <div class="burbuja agente">
+          <p>¡Hola! Contame qué ingredientes tenés, qué tipo de platos buscás o qué temática querés para tu libro de cocina, y te recomiendo recetas.</p>
+        </div>
+      </div>
+
+      <!-- Sub-bloque inferior integrado tal como indica el boceto[span_1](start_span)[span_1](end_span) -->
+      <footer id="zona-de-escritura" class="zona-de-escritura" aria-label="Zona de escritura">
+        <form id="formulario-chat" class="formulario-chat" novalidate>
+          <div class="campo-contenedor">
+            <textarea
+              id="entrada-mensaje"
+              name="mensaje"
+              rows="2"
+              maxlength="500"
+              placeholder="Escribí tu consulta sobre recetas (máx. 500 caracteres)..."
+              aria-label="Escribí tu mensaje"
+              required
+            ></textarea>
+            <span id="contador-caracteres" class="contador-caracteres">0 / 500</span>
+          </div>
+          <button type="submit" id="boton-enviar" class="boton-enviar">Enviar</button>
+        </form>
+        <p id="estado-conexion" class="estado-conexion" aria-live="assertive"></p>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Carga obligatoria de config.js antes que script.js -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
